@@ -3,10 +3,11 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("kotlin-kapt")
 }
-
+val kotlin_version = "1.5.21"
 android {
     namespace = "tn.esprit.gestionuser"
     compileSdk = 34
+
 
     defaultConfig {
         applicationId = "tn.esprit.gestionuser"
@@ -36,6 +37,7 @@ android {
     }
     buildFeatures {
         viewBinding = true
+        dataBinding = true
     }
 }
 
@@ -51,4 +53,13 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    //
+    implementation("androidx.activity:activity-ktx:1.8.0")
+    implementation("com.squareup.retrofit2:retrofit:2.3.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.3.0")
+
+    implementation("org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version")
+    implementation("com.squareup.okhttp3:okhttp:4.9.0")
+
+
 }
